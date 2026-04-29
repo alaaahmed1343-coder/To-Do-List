@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="task-app py-5 px-5">
+        <div class="row">
+            <h2 class="text-white text-center fw-bold mb-5">To Do List</h2>
+            
+            <div class="col-lg-8 bg-white m-auto py-5">
+                <div class="task-wrapper">
+                    
+                    <div class="task-input d-flex align-items-center justify-content-center">
+                        <input class="form-control" type="text" placeholder="Add a new task...">
+                        <span class="btn-add d-flex align-items-center justify-content-center">+</span>
+                    </div>
+                    
+                    <div class="task-list">
+                        <span class="empty-message">No Tasks To Show</span>
+                    </div>
+                </div>
+
+                <div class="task-controls py-3">
+                    <span class="btn-clear px-3 mx-2">Delete</span>
+                    <span class="btn-complete px-3">Finish</span>
+                </div>
+                
+                <div class="task-stats">
+                    <div class="task-total">
+                        Tasks <span>0</span>
+                    </div>
+                    <div class="task-done">
+                        Completed <span>0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
