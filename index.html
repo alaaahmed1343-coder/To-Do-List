@@ -1,57 +1,201 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
+
+    <title>My Tasks | To Do List</title>
 
     <link rel="stylesheet" href="css/sweetalert2.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<div class="task-app py-4 px-3">
-    <div class="row w-100">
+    <main class="task-app">
 
-        <h2 class="text-white text-center fw-bold mb-4">To Do List</h2>
+        <div class="container">
 
-        <div class="col-12 col-md-10 col-lg-8 bg-white m-auto py-4">
-
-            <div class="task-wrapper">
-
-                <div class="task-input d-flex align-items-center">
-                    <input class="form-control" type="text" placeholder="Add a new task...">
-                    <span class="btn-add d-flex align-items-center justify-content-center">+</span>
+            <!-- Header -->
+            <div class="app-header text-center">
+                <div class="app-icon">
+                    ✓
                 </div>
 
-                <div class="task-list">
-                    <span class="empty-message">No Tasks To Show</span>
+                <h1>My Tasks</h1>
+
+                <p>
+                    Stay organized and get things done.
+                </p>
+            </div>
+
+
+            <!-- Main Card -->
+            <div class="task-card">
+
+                <!-- Add Task -->
+                <div class="task-input-wrapper">
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="taskInput"
+                        placeholder="What do you need to do?"
+                        autocomplete="off"
+                    >
+
+                    <button
+                        class="btn-add"
+                        id="btnAdd"
+                        type="button"
+                        aria-label="Add task"
+                    >
+                        <span>+</span>
+                    </button>
+
+                </div>
+
+
+                <!-- Statistics -->
+                <div class="task-summary">
+
+                    <div class="summary-item">
+                        <span class="summary-number" id="totalTasks">0</span>
+                        <span class="summary-label">Total Tasks</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="summary-number completed-number" id="completedTasks">0</span>
+                        <span class="summary-label">Completed</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="summary-number progress-number" id="progressPercent">0%</span>
+                        <span class="summary-label">Progress</span>
+                    </div>
+
+                </div>
+
+
+                <!-- Progress -->
+                <div class="progress-wrapper">
+
+                    <div class="progress-info">
+                        <span>Progress</span>
+                        <span id="progressText">0%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div
+                            class="progress-bar"
+                            id="progressBar"
+                            role="progressbar"
+                            style="width: 0%"
+                        ></div>
+                    </div>
+
+                </div>
+
+
+                <!-- Filters -->
+                <div class="task-filters">
+
+                    <button
+                        type="button"
+                        class="filter-btn active"
+                        data-filter="all"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-filter="active"
+                    >
+                        Active
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-filter="completed"
+                    >
+                        Completed
+                    </button>
+
+                </div>
+
+
+                <!-- Tasks -->
+                <div class="task-list" id="taskList">
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            ✓
+                        </div>
+
+                        <h3>No tasks yet</h3>
+
+                        <p>
+                            Add your first task to get started.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Controls -->
+                <div class="task-controls">
+
+                    <button
+                        type="button"
+                        class="btn-control btn-finish"
+                        id="btnFinishAll"
+                    >
+                        ✓ Finish All
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn-control btn-clear"
+                        id="btnClearCompleted"
+                    >
+                        Clear Completed
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn-control btn-delete"
+                        id="btnDeleteAll"
+                    >
+                        Delete All
+                    </button>
+
                 </div>
 
             </div>
 
-            <div class="task-controls py-3 d-flex justify-content-end gap-2">
-                <span class="btn-complete px-3">Finish All</span>
-                <span class="btn-clear px-3">Delete All</span>
-            </div>
 
-            <div class="task-stats">
-                <div class="task-total">
-                    Tasks <span>0</span>
-                </div>
-                <div class="task-done">
-                    Completed <span>0</span>
-                </div>
-            </div>
+            <!-- Footer -->
+            <p class="app-footer">
+                Your tasks are saved automatically.
+            </p>
 
         </div>
-    </div>
-</div>
 
-<script src="js/sweetalert2.all.min.js"></script>
-<script src="js/main.js"></script>
+    </main>
+
+
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
+
 </html>
